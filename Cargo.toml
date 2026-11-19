@@ -1,0 +1,20 @@
+[package]
+name = "img-forge"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+notify = { version = "8", optional = true }
+ravif = "0.13"
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", optional = true }
+toml = "0.9"
+walkdir = "2"
+zenwebp = "0.4.6"
+
+[features]
+pro = ["dep:notify", "dep:serde_json"]
